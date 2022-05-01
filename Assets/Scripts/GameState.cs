@@ -231,10 +231,7 @@ public class GameState : MonoBehaviour
         GameObject[] meeple = new GameObject[] { red, yellow, green, blue, purple, white };
         foreach (GameObject merson in meeple)
         {
-            if (merson.GetComponent<Meeple>().priority == 0)
-            {
-                currentDude = merson;
-            }
+            if (merson.GetComponent<Meeple>().priority == 0) { currentDude = merson; }
         }
         return currentDude;
     }

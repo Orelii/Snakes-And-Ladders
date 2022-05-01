@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardSpace : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BoardSpace : MonoBehaviour
     public Sprite snakeSprite;
     public int action = 0;
     public int actionNum;
+    public Font displayFont;
     GameObject[] boardArray;
 
     void Start()
@@ -31,6 +33,7 @@ public class BoardSpace : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = oddSprite;
         }
         DrawHazards();
+        DrawSpaceNum();
     }
 
     void DrawHazards()
@@ -55,17 +58,32 @@ public class BoardSpace : MonoBehaviour
         {
             GameObject endPoint = boardArray[actionNum - 1];
             GameObject snake = new GameObject();
-            snake.name = "Snake " + spaceNumber + "->" + actionNum;
+            snake.AddComponent<SnakeLadder>();
             snake.AddComponent<SpriteRenderer>();
+            snake.name = "Snake " + spaceNumber + "->" + actionNum;
             snake.SetActive(true);
             snake.transform.position = transform.position;
             snake.GetComponent<SpriteRenderer>().sprite = snakeSprite;
             snake.transform.localScale = new Vector3(1f, 1f, 1f);
             snake.transform.parent = GameObject.Find("-----Snakes-----").transform;
             snake.GetComponent<SpriteRenderer>().sortingLayerID = -515641929;
-            snake.AddComponent<SnakeLadder>();
             snake.tag = "LadderSnake";
             snake.GetComponent<SnakeLadder>().Stretch(snake, transform.position, endPoint.transform.position, true);
         }
+    }
+    void DrawSpaceNum()
+    {
+        GameObject numText = new GameObject();
+        numText.AddComponent<RectTransform>();
+        numText.AddComponent<CanvasRenderer>();
+        numText.AddComponent<Text>();
+        numText.GetComponent<RectTransform>().position = transform.position;
+        numText.GetComponent<CanvasRenderer>().cullTransparentMesh = true;
+        numText.GetComponent<Text>().text = spaceNumber.ToString();
+        numText.SetActive(true);
+        numText.name = spaceNumber.ToString() + "indicator";
+        numText.GetComponent<RectTransform>().parent = GameObject.Find("BoardCanvas").transform;
+        numText.GetComponent<Text>().fontSize = 20;
+        numText.GetComponent<Text>().font = displayFont;
     }
 }
