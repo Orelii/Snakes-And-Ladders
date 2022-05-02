@@ -58,6 +58,9 @@ TagManager:
   - name: SnakeLadder
     uniqueID: 3779325367
     locked: 0
+  - name: BoardNum
+    uniqueID: 2770686895
+    locked: 0
   - name: Meeple
     uniqueID: 763218197
     locked: 0

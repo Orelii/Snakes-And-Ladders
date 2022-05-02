@@ -82,8 +82,11 @@ public class BoardSpace : MonoBehaviour
         numText.GetComponent<Text>().text = spaceNumber.ToString();
         numText.SetActive(true);
         numText.name = spaceNumber.ToString() + "indicator";
-        numText.GetComponent<RectTransform>().parent = GameObject.Find("BoardCanvas").transform;
+        numText.GetComponent<RectTransform>().SetParent(GameObject.Find("BoardCanvas").transform, false);
         numText.GetComponent<Text>().fontSize = 20;
         numText.GetComponent<Text>().font = displayFont;
+        Color colorTemp;
+        colorTemp.g = 0; colorTemp.r = 0; colorTemp.b = 0; colorTemp.a = 255;
+        numText.GetComponent<Text>().color = colorTemp;
     }
 }
