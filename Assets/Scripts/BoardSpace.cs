@@ -33,7 +33,7 @@ public class BoardSpace : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = oddSprite;
         }
         DrawHazards();
-        DrawSpaceNum();
+        if (spaceNumber != 100) { DrawSpaceNum(); }
     }
 
     void DrawHazards()
@@ -77,16 +77,18 @@ public class BoardSpace : MonoBehaviour
         numText.AddComponent<RectTransform>();
         numText.AddComponent<CanvasRenderer>();
         numText.AddComponent<Text>();
-        numText.GetComponent<RectTransform>().position = transform.position;
+        numText.GetComponent<RectTransform>().SetParent(GameObject.Find("BoardCanvas").transform, false);
+        numText.GetComponent<RectTransform>().SetPositionAndRotation(transform.position, numText.GetComponent<RectTransform>().rotation);
         numText.GetComponent<CanvasRenderer>().cullTransparentMesh = true;
         numText.GetComponent<Text>().text = spaceNumber.ToString();
         numText.SetActive(true);
         numText.name = spaceNumber.ToString() + "indicator";
-        numText.GetComponent<RectTransform>().SetParent(GameObject.Find("BoardCanvas").transform, false);
-        numText.GetComponent<Text>().fontSize = 20;
+        numText.GetComponent<Text>().fontSize = 25;
         numText.GetComponent<Text>().font = displayFont;
         Color colorTemp;
-        colorTemp.g = 0; colorTemp.r = 0; colorTemp.b = 0; colorTemp.a = 255;
+        colorTemp.g = 0; colorTemp.r = 0; colorTemp.b = 0; colorTemp.a = 0;
         numText.GetComponent<Text>().color = colorTemp;
+        numText.tag = "NumInfo";
+        numText.GetComponent<Text>().alignment = TextAnchor.MiddleCenter;
     }
 }

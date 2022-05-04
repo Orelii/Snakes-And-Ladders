@@ -1022,7 +1022,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e4f9f4ff237ddf4a9ad03dfeb4105fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1165,7 +1165,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 410cf6d8a597fa84683c93553c547ef4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2538,8 +2538,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1524280401
-  m_SortingOrder: 0
+  m_SortingLayerID: 840492107
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!4 &338151741 stripped
 Transform:
@@ -3686,14 +3686,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: RedSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: red
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &524158920
@@ -5940,7 +5940,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8946519ba83d70641b41ddbc9647a407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6474,7 +6474,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: b3cc166c1db033c4a895dc1eb11cb75d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8486,14 +8486,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: WhiteSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: white
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1141053309
@@ -9007,7 +9007,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: e14a19269656b4a42aac13424bd223e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10922,14 +10922,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: BlueSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ButtonFunction
+          m_StringArgument: blue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1618379649
@@ -11351,7 +11351,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 00b1f8d7a859ee34f93120fb852ee740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -11579,7 +11579,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 763218197
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ba7f7782e9d4cb449bdf483cfcf8180a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12914,14 +12914,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: PurpleSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: purple
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1924777251
@@ -13046,14 +13046,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: YellowSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: yellow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1926287236
@@ -13881,14 +13881,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 261248488}
         m_TargetAssemblyTypeName: GameState, Assembly-CSharp
-        m_MethodName: GreenSel
-        m_Mode: 1
+        m_MethodName: SelectPlayerColour
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: green
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2096254669

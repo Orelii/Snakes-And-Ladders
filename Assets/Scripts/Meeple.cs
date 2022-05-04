@@ -17,7 +17,6 @@ public class Meeple : MonoBehaviour
     public Color colour;
     GameObject info;
     Button DiceButton;
-
     void Start()
     {
         info = GameObject.FindGameObjectWithTag("Info");
@@ -249,12 +248,6 @@ public class Meeple : MonoBehaviour
         GameObject[] boardArray = info.GetComponent<GameState>().boardArray;
         GameObject nextSpace = boardArray.GetValue(currentSpace + amount) as GameObject;
         StartCoroutine(MoveToPosition(merson, nextSpace, 2.4f));
-        print("Merson: " + merson.name);
-        print("Dice Result: " + amount);
-        print("Current Space: " + (currentSpace + 1));
-        print("Board Action: " + nextSpace.GetComponent<BoardSpace>().action);
-        print("Board Action Number: " + nextSpace.GetComponent<BoardSpace>().actionNum);
-        print("------------------------------------");
         switch (nextSpace.GetComponent<BoardSpace>().action)
         {
             case 1:
@@ -270,7 +263,10 @@ public class Meeple : MonoBehaviour
                 break;
         }
         currentSpace += amount;
-
+        if (currentSpace == 99)
+        {
+            print("A winner is you!");
+        }
     }
 
     public IEnumerator MoveToPosition(GameObject merson, GameObject nextSpace, float timeToMove)

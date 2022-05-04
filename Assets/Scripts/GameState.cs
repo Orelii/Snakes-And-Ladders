@@ -26,7 +26,6 @@ public class GameState : MonoBehaviour
         dicepanel.SetActive(false);
         playerSelectedCount = 0;
     }
-
     #region Number of Players
     public void P2Select()
     {
@@ -59,22 +58,48 @@ public class GameState : MonoBehaviour
         playermenupanel.SetActive(false);
     }
     #endregion
-    #region Player Colours
-    public void BlueSel()
+    public void SelectPlayerColour(string colour)
     {
-        GameObject meeple = GameObject.FindGameObjectWithTag("Blue");
+        GameObject meeple;
+        switch (colour)
+        {
+            case "red":
+                meeple = GameObject.FindGameObjectWithTag("Red");
+                colourbutton = GameObject.Find("RedSel").GetComponent<Button>();
+                break;
+            case "blue":
+                meeple = GameObject.FindGameObjectWithTag("Blue");
+                colourbutton = GameObject.Find("BlueSel").GetComponent<Button>();
+                break;
+            case "green":
+                meeple = GameObject.FindGameObjectWithTag("Green");
+                colourbutton = GameObject.Find("GreenSel").GetComponent<Button>();
+                break;
+            case "yellow":
+                meeple = GameObject.FindGameObjectWithTag("Yellow");
+                colourbutton = GameObject.Find("YellowSel").GetComponent<Button>();
+                break;
+            case "purple":
+                meeple = GameObject.FindGameObjectWithTag("Purple");
+                colourbutton = GameObject.Find("PurpleSel").GetComponent<Button>();
+                break;
+            case "white":
+                meeple = GameObject.FindGameObjectWithTag("White");
+                colourbutton = GameObject.Find("WhiteSel").GetComponent<Button>();
+                break;
+            default:
+                meeple = GameObject.FindGameObjectWithTag("Red");
+                break;
+        }
         header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("BlueSel").GetComponent<Button>();
         playerSelectedCount++;
         if (playerSelectedCount == playerCount)
         {
             colourmenupanel.SetActive(false);
             dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
+            foreach (GameObject hazard in GameObject.FindGameObjectsWithTag("LadderSnake")) { hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false; }
+            foreach (GameObject number in GameObject.FindGameObjectsWithTag("NumInfo"))
+            { Color colorTemp = number.GetComponent<Text>().color; colorTemp.a = 0.5f; number.GetComponent<Text>().color = colorTemp; }
         }
         else
         {
@@ -85,132 +110,6 @@ public class GameState : MonoBehaviour
         meeple.GetComponent<Meeple>().UpdatePriority();
         meeple.GetComponent<Meeple>().ArrangeStartingPositions();
     }
-    public void RedSel()
-    {
-        GameObject meeple = GameObject.FindGameObjectWithTag("Red");
-        header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("RedSel").GetComponent<Button>();
-        playerSelectedCount++;
-        if (playerSelectedCount == playerCount)
-        {
-            colourmenupanel.SetActive(false);
-            dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
-        }
-        else
-        {
-            colourbutton.interactable = false;
-            header.text = "Player " + (playerSelectedCount + 1) + " Colour";
-        }
-        meeple.GetComponent<Meeple>().priority = playerSelectedCount - 1;
-        meeple.GetComponent<Meeple>().UpdatePriority();
-        meeple.GetComponent<Meeple>().ArrangeStartingPositions();
-    }
-    public void GreenSel()
-    {
-        GameObject meeple = GameObject.FindGameObjectWithTag("Green");
-        header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("GreenSel").GetComponent<Button>();
-        playerSelectedCount++;
-        if (playerSelectedCount == playerCount)
-        {
-            colourmenupanel.SetActive(false);
-            dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
-        }
-        else
-        {
-            colourbutton.interactable = false;
-            header.text = "Player " + (playerSelectedCount + 1) + " Colour";
-        }
-        meeple.GetComponent<Meeple>().priority = playerSelectedCount - 1;
-        meeple.GetComponent<Meeple>().UpdatePriority();
-        meeple.GetComponent<Meeple>().ArrangeStartingPositions();
-    }
-    public void YellowSel()
-    {
-        GameObject meeple = GameObject.FindGameObjectWithTag("Yellow");
-        header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("YellowSel").GetComponent<Button>();
-        playerSelectedCount++;
-        if (playerSelectedCount == playerCount)
-        {
-            colourmenupanel.SetActive(false);
-            dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
-        }
-        else
-        {
-            colourbutton.interactable = false;
-            header.text = "Player " + (playerSelectedCount + 1) + " Colour";
-        }
-        meeple.GetComponent<Meeple>().priority = playerSelectedCount - 1;
-        meeple.GetComponent<Meeple>().UpdatePriority();
-        meeple.GetComponent<Meeple>().ArrangeStartingPositions();
-    }
-    public void PurpleSel()
-    {
-        GameObject meeple = GameObject.FindGameObjectWithTag("Purple");
-        header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("PurpleSel").GetComponent<Button>();
-        playerSelectedCount++;
-        if (playerSelectedCount == playerCount)
-        {
-            colourmenupanel.SetActive(false);
-            dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
-        }
-        else
-        {
-            colourbutton.interactable = false;
-            header.text = "Player " + (playerSelectedCount + 1) + " Colour";
-        }
-        meeple.GetComponent<Meeple>().priority = playerSelectedCount - 1;
-        meeple.GetComponent<Meeple>().UpdatePriority();
-        meeple.GetComponent<Meeple>().ArrangeStartingPositions();
-    }
-    public void WhiteSel()
-    {
-        GameObject meeple = GameObject.FindGameObjectWithTag("White");
-        header = GameObject.Find("ColourHeader").GetComponent<Text>();
-        colourbutton = GameObject.Find("WhiteSel").GetComponent<Button>();
-        playerSelectedCount++;
-        if (playerSelectedCount == playerCount)
-        {
-            colourmenupanel.SetActive(false);
-            dicepanel.SetActive(true);
-            GameObject[] hazardArray = GameObject.FindGameObjectsWithTag("LadderSnake");
-            foreach (GameObject hazard in hazardArray)
-            {
-                hazard.GetComponent<SpriteRenderer>().forceRenderingOff = false;
-            }
-        }
-        else
-        {
-            colourbutton.interactable = false;
-            header.text = "Player " + (playerSelectedCount + 1) + " Colour";
-        }
-        meeple.GetComponent<Meeple>().priority = playerSelectedCount - 1;
-        meeple.GetComponent<Meeple>().UpdatePriority();
-        meeple.GetComponent<Meeple>().ArrangeStartingPositions();
-    }
-    #endregion
     public void RollDice()
     {
         GameObject dice = GameObject.FindGameObjectWithTag("Die");
@@ -261,5 +160,9 @@ public class GameState : MonoBehaviour
             }
         }
         red.GetComponent<Meeple>().UpdatePriority();
+    }
+    public void WinGame(GameObject merson)
+    {
+
     }
 }
