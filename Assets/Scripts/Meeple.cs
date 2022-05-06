@@ -59,185 +59,39 @@ public class Meeple : MonoBehaviour
         GameObject yellow = GameObject.FindGameObjectWithTag("Yellow");
         GameObject purple = GameObject.FindGameObjectWithTag("Purple");
         GameObject white = GameObject.FindGameObjectWithTag("White");
+        GameObject[] meeple = new GameObject[6] { red, blue, green, yellow, purple, white };
         #endregion
-        if (red.GetComponent<Meeple>().priority != null)
+        foreach (GameObject merson in meeple)
         {
-            switch (red.GetComponent<Meeple>().priority)
+            if (merson.GetComponent<Meeple>().priority != null)
             {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = red.GetComponent<Meeple>().colour;
-                    break;
-            }
-        }
-        if (blue.GetComponent<Meeple>().priority != null)
-        {
-            switch (blue.GetComponent<Meeple>().priority)
-            {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = blue.GetComponent<Meeple>().colour;
-                    break;
-            }
-        }
-        if (green.GetComponent<Meeple>().priority != null)
-        {
-            switch (green.GetComponent<Meeple>().priority)
-            {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = green.GetComponent<Meeple>().colour;
-                    break;
-            }
-        }
-        if (yellow.GetComponent<Meeple>().priority != null)
-        {
-            switch (yellow.GetComponent<Meeple>().priority)
-            {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = yellow.GetComponent<Meeple>().colour;
-                    break;
-            }
-        }
-        if (purple.GetComponent<Meeple>().priority != null)
-        {
-            switch (purple.GetComponent<Meeple>().priority)
-            {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = purple.GetComponent<Meeple>().colour;
-                    break;
-            }
-        }
-        if (white.GetComponent<Meeple>().priority != null)
-        {
-            switch (white.GetComponent<Meeple>().priority)
-            {
-                case 0:
-                    uno.SetActive(true);
-                    uno.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
-                case 1:
-                    dos.SetActive(true);
-                    dos.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
-                case 2:
-                    tres.SetActive(true);
-                    tres.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
-                case 3:
-                    cuatro.SetActive(true);
-                    cuatro.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
-                case 4:
-                    cinco.SetActive(true);
-                    cinco.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
-                case 5:
-                    seis.SetActive(true);
-                    seis.GetComponent<SpriteRenderer>().color = white.GetComponent<Meeple>().colour;
-                    break;
+                switch (merson.GetComponent<Meeple>().priority)
+                {
+                    case 0:
+                        uno.SetActive(true);
+                        uno.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                    case 1:
+                        dos.SetActive(true);
+                        dos.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                    case 2:
+                        tres.SetActive(true);
+                        tres.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                    case 3:
+                        cuatro.SetActive(true);
+                        cuatro.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                    case 4:
+                        cinco.SetActive(true);
+                        cinco.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                    case 5:
+                        seis.SetActive(true);
+                        seis.GetComponent<SpriteRenderer>().color = merson.GetComponent<Meeple>().colour;
+                        break;
+                }
             }
         }
     }
@@ -263,9 +117,25 @@ public class Meeple : MonoBehaviour
                 break;
         }
         currentSpace += amount;
-        if (currentSpace == 99)
+        switch (currentSpace)
         {
-            print("A winner is you!");
+            case 99:
+                break;
+            case 100:
+                currentSpace = 98;
+                break;
+            case 101:
+                currentSpace = 97;
+                break;
+            case 102:
+                currentSpace = 96;
+                break;
+            case 103:
+                currentSpace = 95;
+                break;
+            case 104:
+                currentSpace = 94;
+                break;
         }
     }
 
