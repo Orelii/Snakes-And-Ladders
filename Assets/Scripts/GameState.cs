@@ -163,6 +163,6 @@ public class GameState : MonoBehaviour
     }
     public void WinGame(GameObject merson)
     {
-        print("gabagool");
+        print("this counts as a change");
     }
 }
