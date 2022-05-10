@@ -153,16 +153,42 @@ public class GameState : MonoBehaviour
                 {
                     merson.GetComponent<Meeple>().priority = playerSelectedCount - 1;
                 }
-                else
-                {
-                    merson.GetComponent<Meeple>().priority--;
-                }
+                else { merson.GetComponent<Meeple>().priority--; }
             }
         }
         red.GetComponent<Meeple>().UpdatePriority();
     }
     public void WinGame(GameObject merson)
     {
-        print("this counts as a change");
+        foreach (GameObject hazard in GameObject.FindGameObjectsWithTag("LadderSnake")) { hazard.GetComponent<SpriteRenderer>().forceRenderingOff = true; }
+        foreach (GameObject number in GameObject.FindGameObjectsWithTag("NumInfo"))
+        { Color colorTemp = number.GetComponent<Text>().color; colorTemp.a = 0f; number.GetComponent<Text>().color = colorTemp; }
+        GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        StartCoroutine(Disintegrate(boardArray));
+        GameObject.FindGameObjectWithTag("WinnerImage").GetComponent<Image>().sprite = merson.GetComponent<SpriteRenderer>().sprite;
+        #region hide meeple
+        GameObject.FindGameObjectWithTag("Red").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("Blue").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("Green").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("Yellow").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("Purple").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("White").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        #endregion
+        foreach (GameObject thing in GameObject.FindGameObjectsWithTag("WinStuff")) 
+        { 
+            thing.GetComponent<Text>().color = merson.GetComponent<Meeple>().colour;
+            if (thing.name == "WinText4") 
+            {
+                thing.GetComponent<Text>().text = merson.GetComponent<SpriteRenderer>().sprite.name.ToUpperInvariant() + " wins!!"; 
+            }
+        }
+    }
+    public IEnumerator Disintegrate(GameObject[] array)
+    {
+        foreach(GameObject thing in array)
+        {
+            yield return new WaitForSeconds(Random.value / 16);
+            thing.GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        }
     }
 }

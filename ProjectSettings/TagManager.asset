@@ -16,6 +16,9 @@ TagManager:
   - DiceButton
   - LadderSnake
   - NumInfo
+  - Go
+  - WinnerImage
+  - WinStuff
   layers:
   - Default
   - TransparentFX

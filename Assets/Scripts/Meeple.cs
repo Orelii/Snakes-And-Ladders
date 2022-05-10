@@ -120,6 +120,7 @@ public class Meeple : MonoBehaviour
         switch (currentSpace)
         {
             case 99:
+                info.GetComponent<GameState>().WinGame(merson);
                 break;
             case 100:
                 currentSpace = 98;
@@ -158,6 +159,7 @@ public class Meeple : MonoBehaviour
         nextSpace = boardArray[onSpace.GetComponent<BoardSpace>().actionNum - 1];
         merson.GetComponent<Meeple>().currentSpace = nextSpace.GetComponent<BoardSpace>().spaceNumber - 1;
         StartCoroutine(MoveToPosition(merson, nextSpace, 1.2f));
+        if (merson.GetComponent<Meeple>().currentSpace == 99) { info.GetComponent<GameState>().WinGame(merson); }
         DiceButton.interactable = true;
     }
 }
