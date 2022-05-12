@@ -164,6 +164,7 @@ public class GameState : MonoBehaviour
         foreach (GameObject number in GameObject.FindGameObjectsWithTag("NumInfo"))
         { Color colorTemp = number.GetComponent<Text>().color; colorTemp.a = 0f; number.GetComponent<Text>().color = colorTemp; }
         GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        GameObject.FindGameObjectWithTag("DiceButton").GetComponent<Button>().enabled = false;
         StartCoroutine(Disintegrate(boardArray));
         GameObject.FindGameObjectWithTag("WinnerImage").GetComponent<Image>().sprite = merson.GetComponent<SpriteRenderer>().sprite;
         #region hide meeple
@@ -179,11 +180,15 @@ public class GameState : MonoBehaviour
             thing.GetComponent<Text>().color = merson.GetComponent<Meeple>().colour;
             if (thing.name == "WinText4") 
             {
-                thing.GetComponent<Text>().text = merson.GetComponent<SpriteRenderer>().sprite.name.ToUpperInvariant() + " wins!!"; 
+                thing.GetComponent<Text>().text = merson.GetComponent<SpriteRenderer>().sprite.name.ToUpper() + " wins!!"; 
             }
         }
+        Color opaque = GameObject.FindGameObjectWithTag("PlayAgain").GetComponent<Image>().color;
+        opaque.a = 1;
+        GameObject.FindGameObjectWithTag("PlayAgain").GetComponent<Image>().color = opaque;
+        GameObject.FindGameObjectWithTag("MainMenu").GetComponent<Image>().color = opaque;
     }
-    public IEnumerator Disintegrate(GameObject[] array)
+    IEnumerator Disintegrate(GameObject[] array)
     {
         foreach(GameObject thing in array)
         {
