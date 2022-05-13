@@ -160,11 +160,11 @@ public class GameState : MonoBehaviour
     }
     public void WinGame(GameObject merson)
     {
+        GameObject.FindGameObjectWithTag("DiceButton").GetComponent<Button>().interactable = false;
         foreach (GameObject hazard in GameObject.FindGameObjectsWithTag("LadderSnake")) { hazard.GetComponent<SpriteRenderer>().forceRenderingOff = true; }
         foreach (GameObject number in GameObject.FindGameObjectsWithTag("NumInfo"))
         { Color colorTemp = number.GetComponent<Text>().color; colorTemp.a = 0f; number.GetComponent<Text>().color = colorTemp; }
-        GameObject.FindGameObjectWithTag("Go").GetComponent<SpriteRenderer>().forceRenderingOff = true;
-        GameObject.FindGameObjectWithTag("DiceButton").GetComponent<Button>().enabled = false;
+        foreach (GameObject thing in GameObject.FindGameObjectsWithTag("Go")) { thing.GetComponent<SpriteRenderer>().forceRenderingOff = true; }
         StartCoroutine(Disintegrate(boardArray));
         GameObject.FindGameObjectWithTag("WinnerImage").GetComponent<Image>().sprite = merson.GetComponent<SpriteRenderer>().sprite;
         #region hide meeple
@@ -184,9 +184,12 @@ public class GameState : MonoBehaviour
             }
         }
         Color opaque = GameObject.FindGameObjectWithTag("PlayAgain").GetComponent<Image>().color;
-        opaque.a = 1;
+        Color opaqueT = GameObject.FindGameObjectWithTag("PlayAgain").transform.Find("Text").GetComponent<Text>().color;
+        opaque.a = 1; opaqueT.a = 1;
         GameObject.FindGameObjectWithTag("PlayAgain").GetComponent<Image>().color = opaque;
+        GameObject.FindGameObjectWithTag("PlayAgain").transform.Find("Text").GetComponent<Text>().color = opaqueT;
         GameObject.FindGameObjectWithTag("MainMenu").GetComponent<Image>().color = opaque;
+        GameObject.FindGameObjectWithTag("MainMenu").transform.Find("Text").GetComponent<Text>().color = opaqueT;
     }
     IEnumerator Disintegrate(GameObject[] array)
     {

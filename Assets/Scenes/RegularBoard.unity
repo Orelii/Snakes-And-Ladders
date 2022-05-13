@@ -961,8 +961,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+    m_PressedColor: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -982,7 +982,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 193895709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 626596071}
+        m_TargetAssemblyTypeName: SceneControls, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &193895709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4489,6 +4501,7 @@ GameObject:
   - component: {fileID: 626596070}
   - component: {fileID: 626596069}
   - component: {fileID: 626596068}
+  - component: {fileID: 626596071}
   m_Layer: 5
   m_Name: VictoryButtonCanvas
   m_TagString: Untagged
@@ -4578,6 +4591,18 @@ Canvas:
   m_SortingLayerID: -1447792931
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &626596071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626596066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51aa1dd622abd2b4a8118968b6c56c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &626630890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5788,7 +5813,7 @@ GameObject:
   - component: {fileID: 864041638}
   m_Layer: 0
   m_Name: PrioMarker6
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8320,7 +8345,7 @@ GameObject:
   - component: {fileID: 1043033033}
   m_Layer: 0
   m_Name: PrioMarker4
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10788,8 +10813,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+    m_PressedColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -10809,7 +10834,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526230945}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 626596071}
+        m_TargetAssemblyTypeName: SceneControls, Assembly-CSharp
+        m_MethodName: RefreshScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526230945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12833,7 +12870,7 @@ GameObject:
   - component: {fileID: 1717388808}
   m_Layer: 0
   m_Name: PrioMarker3
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13203,7 +13240,7 @@ GameObject:
   - component: {fileID: 1779512647}
   m_Layer: 0
   m_Name: PrioMarker1
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13568,7 +13605,7 @@ GameObject:
   - component: {fileID: 1870899749}
   m_Layer: 0
   m_Name: PrioMarker2
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13735,7 +13772,7 @@ GameObject:
   - component: {fileID: 1891056896}
   m_Layer: 0
   m_Name: PrioMarker5
-  m_TagString: Untagged
+  m_TagString: Go
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

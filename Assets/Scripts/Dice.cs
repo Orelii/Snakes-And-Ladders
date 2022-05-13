@@ -22,15 +22,15 @@ public class Dice : MonoBehaviour
     {
         if (spinDiceActive)
         {
-            transform.Rotate(xspin, yspin, zspin);
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.006f, transform.position.z);
-            transform.localScale = new Vector3(transform.localScale.x - 0.0008f, transform.localScale.y - 0.0008f, transform.localScale.z - 0.0008f);
+            transform.Rotate(xspin * 6, yspin * 6, zspin * 6);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.06f, transform.position.z);
+            transform.localScale = new Vector3(transform.localScale.x - 0.0008f * 3, transform.localScale.y - 0.0008f * 3, transform.localScale.z - 0.0008f * 3);
         }
         if (enableAlpha)
         {
-            rollResult.transform.localScale = new Vector3(rollResult.transform.localScale.x + 0.009f, rollResult.transform.localScale.y + 0.009f);
+            rollResult.transform.localScale = new Vector3(rollResult.transform.localScale.x + 0.009f * 8, rollResult.transform.localScale.y + 0.009f * 8);
             Color colalp = rollResult.GetComponent<SpriteRenderer>().color;
-            colalp.a = colalp.a + 0.03f;
+            colalp.a = colalp.a + 0.03f * 4;
             rollResult.GetComponent<SpriteRenderer>().color = colalp;
             rollResult.transform.position = new Vector3(transform.position.x, transform.position.y, -2);
         }
